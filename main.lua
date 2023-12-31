@@ -9,7 +9,7 @@ local categories = addon:GetModule('Categories')
 local L = addon:GetModule('Localization')
 
 -- Add the list of items that teleport you
-local items = {
+local teleporters = {
     { itemID = 6948, itemName = "Hearthstone" },
     { itemID = 17690, itemName = "Frostwolf Insignia Rank 1" },
     { itemID = 17691, itemName = "Stormpike Insignia Rank 1" },
