@@ -1,0 +1,6 @@
+package-as: BetterBags-Teleports
+
+license-output: LICENSE.txt
+
+ignore:
+  - BetterBagsTeleports.png
