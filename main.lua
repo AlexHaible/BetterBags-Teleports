@@ -175,6 +175,7 @@ local teleporters = {
     { itemID = 201957, itemName = "Thrall's Hearthstone" },
     { itemID = 202046, itemName = "Lucky Tortollan Charm" },
     { itemID = 204481, itemName = "Morqut Hearth Totem" },
+    { itemID = 204802, itemName = "Scroll of Teleport: Zskera Vaults" },
     { itemID = 205255, itemName = "Niffen Diggin' Mitts" },
 }
 
