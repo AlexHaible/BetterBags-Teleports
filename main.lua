@@ -177,6 +177,8 @@ local teleporters = {
     { itemID = 204481, itemName = "Morqut Hearth Totem" },
     { itemID = 204802, itemName = "Scroll of Teleport: Zskera Vaults" },
     { itemID = 205255, itemName = "Niffen Diggin' Mitts" },
+    { itemID = 209035, itemName = "Hearthstone of the Flame" },
+    { itemID = 212337, itemName = "Stone of the Hearth" },
 }
 
 -- Loop through list of teleporters and add to category.
