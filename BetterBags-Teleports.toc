@@ -11,4 +11,12 @@
 ## X-Curse-Project-ID: 956341
 ## Dependencies: BetterBags
 
+#@alpha@
+## OptionalDeps: BugSack, BugGrabber
+#@end-alpha@
+
 main.lua
+
+#@debug@
+## Version: DEV
+#@end-debug@

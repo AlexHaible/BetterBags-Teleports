@@ -80,6 +80,9 @@ if isWrath or isRetail then
     table.insert(teleporters, { itemID = 51560, itemName = "Runed Band of the Kirin Tor" })
     table.insert(teleporters, { itemID = 52251, itemName = "Jaina's Locket" })
     table.insert(teleporters, { itemID = 54452, itemName = "Ethereal Portal" })
+end
+
+if isWrath then
     table.insert(teleporters, { itemID = 184871, itemName = "Dark Portal (TBC)" })
     table.insert(teleporters, { itemID = 199335, itemName = "Teleport Scroll: Menethil Harbor" })
     table.insert(teleporters, { itemID = 199336, itemName = "Teleport Scroll: Stormwind Harbor" })
@@ -90,13 +93,6 @@ end
 
 -- And these are only in Retail, because classic isn't past WotLK yet.
 if isRetail then
-    -- Remove entries with itemID's 184871, 199335, 199336, 199777, 199778, 200068 as they aren't in retail anymore, go figure.
-    for i, item in ipairs(teleporters) do
-        if item.itemID == 184871 or item.itemID == 199335 or item.itemID == 199336 or item.itemID == 199777 or item.itemID == 199778 or item.itemID == 200068 then
-            table.remove(teleporters, i)
-        end
-    end
-
     table.insert(teleporters, { itemID = 58487, itemName = "Potion of Deepholm" })
     table.insert(teleporters, { itemID = 61379, itemName = "Gidwin's Hearthstone" })
     table.insert(teleporters, { itemID = 63206, itemName = "Wrap of Unity: Stormwind" })
@@ -204,6 +200,7 @@ if isRetail then
     table.insert(teleporters, { itemID = 191029, itemName = "Lilian's Hearthstone" })
     table.insert(teleporters, { itemID = 193588, itemName = "Timewalker's Hearthstone" })
     table.insert(teleporters, { itemID = 198156, itemName = "Wyrmhole Generator: Dragon Isles" })
+    table.insert(teleporters, { itemID = 200613, itemName = "Aylaag Windstone Fragment" })
     table.insert(teleporters, { itemID = 200630, itemName = "Ohn'ir Windsage's Hearthstone" })
     table.insert(teleporters, { itemID = 201957, itemName = "Thrall's Hearthstone" })
     table.insert(teleporters, { itemID = 202046, itemName = "Lucky Tortollan Charm" })
