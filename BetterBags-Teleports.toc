@@ -1,8 +1,13 @@
 ## Interface: 100206
+## Interface-Wrath: 30403
+## Interface-Classic: 11501
+
 ## Title: BetterBags - Teleports
-## Author: Sauravisus
-## Version: 1.0.6
+## Author: Sauravisus (Xerastrasza - Magtheridon EU, Horde)
 ## Notes: Puts all your hearthstones, and teleport items in one category.
+## Version: @project-version@
+## X-Date: @project-date-iso@
+## X-Category: Bags & Inventory
 ## X-Curse-Project-ID: 956341
 ## Dependencies: BetterBags
 

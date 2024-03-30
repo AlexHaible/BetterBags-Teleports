@@ -1,6 +1,10 @@
 package-as: BetterBags-Teleports
+enable-toc-creation: yes
 
 license-output: LICENSE.txt
+
+required-dependencies:
+  - better-bags
 
 ignore:
   - BetterBagsTeleports.png
