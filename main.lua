@@ -13,7 +13,7 @@ local L = BetterBags:GetModule('Localization')
 local _, addon = ...
 
 -- Get the game version
-local isWrath = WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC
+local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATA_CLASSIC
 local isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 -- Kill the category from different plugin.
@@ -46,7 +46,7 @@ table.insert(teleporters, { itemID = 22631, itemName = "Atiesh, Greatstaff of th
 table.insert(teleporters, { itemID = 22632, itemName = "Atiesh, Greatstaff of the Guardian (Druid)" })
 
 -- These are available in TBC and later versions of the game.
-if isWrath or isRetail then
+if isCata or isRetail then
     table.insert(teleporters, { itemID = 28585, itemName = "Ruby Slippers" })
     table.insert(teleporters, { itemID = 29796, itemName = "Socrethar's Teleportation Stone" })
     table.insert(teleporters, { itemID = 30542, itemName = "Dimensional Ripper - Area 52" })
@@ -80,19 +80,6 @@ if isWrath or isRetail then
     table.insert(teleporters, { itemID = 51560, itemName = "Runed Band of the Kirin Tor" })
     table.insert(teleporters, { itemID = 52251, itemName = "Jaina's Locket" })
     table.insert(teleporters, { itemID = 54452, itemName = "Ethereal Portal" })
-end
-
-if isWrath then
-    table.insert(teleporters, { itemID = 184871, itemName = "Dark Portal (TBC)" })
-    table.insert(teleporters, { itemID = 199335, itemName = "Teleport Scroll: Menethil Harbor" })
-    table.insert(teleporters, { itemID = 199336, itemName = "Teleport Scroll: Stormwind Harbor" })
-    table.insert(teleporters, { itemID = 199777, itemName = "Teleport Scroll: Orgrimmar Zepplin Tower" })
-    table.insert(teleporters, { itemID = 199778, itemName = "Teleport Scroll: Undercity Zepplin Tower" })
-    table.insert(teleporters, { itemID = 200068, itemName = "Teleport Scroll: Shattrath City" })
-end
-
--- And these are only in Retail, because classic isn't past WotLK yet.
-if isRetail then
     table.insert(teleporters, { itemID = 58487, itemName = "Potion of Deepholm" })
     table.insert(teleporters, { itemID = 61379, itemName = "Gidwin's Hearthstone" })
     table.insert(teleporters, { itemID = 63206, itemName = "Wrap of Unity: Stormwind" })
@@ -107,6 +94,19 @@ if isRetail then
     table.insert(teleporters, { itemID = 65360, itemName = "Cloak of Coordination: Stormwind" })
     table.insert(teleporters, { itemID = 68808, itemName = "Hero's Hearthstone" })
     table.insert(teleporters, { itemID = 68809, itemName = "Veteran's Hearthstone" })
+end
+
+if isCata then
+    table.insert(teleporters, { itemID = 184871, itemName = "Dark Portal (TBC)" })
+    table.insert(teleporters, { itemID = 199335, itemName = "Teleport Scroll: Menethil Harbor" })
+    table.insert(teleporters, { itemID = 199336, itemName = "Teleport Scroll: Stormwind Harbor" })
+    table.insert(teleporters, { itemID = 199777, itemName = "Teleport Scroll: Orgrimmar Zepplin Tower" })
+    table.insert(teleporters, { itemID = 199778, itemName = "Teleport Scroll: Undercity Zepplin Tower" })
+    table.insert(teleporters, { itemID = 200068, itemName = "Teleport Scroll: Shattrath City" })
+end
+
+-- And these are only in Retail, because classic isn't past Cata yet.
+if isRetail then
     table.insert(teleporters, { itemID = 87215, itemName = "Wormhole Generator: Pandaria" })
     table.insert(teleporters, { itemID = 87548, itemName = "Lorewalker's Lodestone" })
     table.insert(teleporters, { itemID = 92510, itemName = "Vol'jin's Hearthstone" })
