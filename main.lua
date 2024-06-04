@@ -13,7 +13,7 @@ local L = BetterBags:GetModule('Localization')
 local _, addon = ...
 
 -- Get the game version
-local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATA_CLASSIC
+local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
 local isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 -- Kill the category from different plugin.
