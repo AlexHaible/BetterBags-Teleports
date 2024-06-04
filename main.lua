@@ -209,7 +209,10 @@ if isRetail then
     table.insert(teleporters, { itemID = 205255, itemName = "Niffen Diggin' Mitts" })
     table.insert(teleporters, { itemID = 205456, itemName = "Lost Dragonscale (1)" })
     table.insert(teleporters, { itemID = 205458, itemName = "Lost Dragonscale (2)" })
+    table.insert(teleporters, { itemID = 206195, itemName = "Path of the Naaru" })
+    table.insert(teleporters, { itemID = 208704, itemName = "Deepdweller's Earthen Hearthstone" })
     table.insert(teleporters, { itemID = 209035, itemName = "Hearthstone of the Flame" })
+    table.insert(teleporters, { itemID = 210455, itemName = "Draenic Hologem" })
     table.insert(teleporters, { itemID = 211788, itemName = "Tess's Peacebloom" })
     table.insert(teleporters, { itemID = 212337, itemName = "Stone of the Hearth" })
 end
