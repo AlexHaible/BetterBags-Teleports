@@ -1,6 +1,4 @@
-## Interface: 100207
-## Interface-Cata: 40400
-## Interface-Classic: 11502
+## Interface: 100207, 110000, 40400, 11502
 
 ## Title: BetterBags - Teleports
 ## Author: Sauravisus (Xerastrasza - Magtheridon EU, Horde)
@@ -10,6 +8,7 @@
 ## X-Category: Bags & Inventory
 ## X-Curse-Project-ID: 956341
 ## Dependencies: BetterBags
+## IconTexture: Interface\Icons\inv_misc_bag_24_netherweave_imbued
 
 #@alpha@
 ## OptionalDeps: BugSack, BugGrabber
