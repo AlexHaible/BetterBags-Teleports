@@ -215,6 +215,7 @@ if isRetail then
     table.insert(teleporters, { itemID = 210455, itemName = "Draenic Hologem" })
     table.insert(teleporters, { itemID = 211788, itemName = "Tess's Peacebloom" })
     table.insert(teleporters, { itemID = 212337, itemName = "Stone of the Hearth" })
+    table.insert(teleporters, { itemID = 219222, itemName = "Time-Lost Artifact (Remix)" })
     table.insert(teleporters, { itemID = 223988, itemName = "Dalaran Hearthstone (Quest Item)" })
 end
 
