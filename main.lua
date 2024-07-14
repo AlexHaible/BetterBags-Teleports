@@ -25,6 +25,10 @@ local Events = BetterBags:GetModule('Events')
 local _, addon = ...
 
 local db
+local defaults = {
+    profile = {}
+}
+local configOptions
 
 -- Get the game version
 local isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
@@ -38,10 +42,8 @@ categories:WipeCategory(TUTORIAL_TITLE31)
 local teleporters = {}
 
 if isClassic or isCata then
-    defaults = {
-        profile = {
-            enablePortalReagents = false,
-        },
+    defaults.profile = {
+        enablePortalReagents = false,
     }
 
     configOptions = {
@@ -60,7 +62,7 @@ if isClassic or isCata then
                     end,
                     set = function(info, value)
                         Teleporters.db.profile.enablePortalReagents = value
-                        clearExistingCategories()
+                        clearTeleportCategory()
                         addTeleportItemsToTable()
                         addTeleportersToCategory()
                         Events:SendMessage('bags/FullRefreshAll')
@@ -71,7 +73,7 @@ if isClassic or isCata then
                     name = "Force Refresh",
                     desc = "This will forcibly refresh the Teleporters category.",
                     func = function()
-                        clearExistingCategories()
+                        clearTeleportCategory()
                         addTeleportItemsToTable()
                         addTeleportersToCategory()
                         Events:SendMessage('bags/FullRefreshAll')
@@ -81,10 +83,6 @@ if isClassic or isCata then
         },
     }
 else
-    defaults = {
-        profile = {},
-    }
-
     configOptions = {
         retailOptions = {
             name = L:G("Retail Options"),
@@ -97,7 +95,7 @@ else
                     name = "Force Refresh",
                     desc = "This will forcibly refresh the Teleporters category.",
                     func = function()
-                        clearExistingCategories()
+                        clearTeleportCategory()
                         addTeleportItemsToTable()
                         addTeleportersToCategory()
                         Events:SendMessage('bags/FullRefreshAll')
@@ -117,7 +115,7 @@ function Teleporters:addTeleportersConfig()
     Config:AddPluginConfig("Teleporters", configOptions)
 end
 
-function clearExistingCategories()
+function clearTeleportCategory()
     categories:WipeCategory(L:G("Teleporters"))
 end
 
@@ -346,7 +344,7 @@ function Teleporters:OnInitialize()
     db = self.db.profile
 
     self:addTeleportersConfig()
-    clearExistingCategories()
+    clearTeleportCategory()
     addTeleportItemsToTable()
     addTeleportersToCategory()
 end
