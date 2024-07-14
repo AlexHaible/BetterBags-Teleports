@@ -66,6 +66,17 @@ if isClassic or isCata then
                         Events:SendMessage('bags/FullRefreshAll')
                     end,
                 },
+                forceRefreshTeleports = {
+                    type = "execute",
+                    name = "Force Refresh",
+                    desc = "This will forcibly refresh the Teleporters category.",
+                    func = function()
+                        clearExistingCategories()
+                        addTeleportItemsToTable()
+                        addTeleportersToCategory()
+                        Events:SendMessage('bags/FullRefreshAll')
+                    end,
+                },
             },
         },
     }
@@ -74,7 +85,27 @@ else
         profile = {},
     }
 
-    configOptions = {}
+    configOptions = {
+        retailOptions = {
+            name = L:G("Retail Options"),
+            type = "group",
+            order = 1,
+            inline = true,
+            args = {
+                forceRefreshTeleports = {
+                    type = "execute",
+                    name = "Force Refresh",
+                    desc = "This will forcibly refresh the Teleporters category.",
+                    func = function()
+                        clearExistingCategories()
+                        addTeleportItemsToTable()
+                        addTeleportersToCategory()
+                        Events:SendMessage('bags/FullRefreshAll')
+                    end,
+                },
+            },
+        },
+    }
 end
 
 function Teleporters:addTeleportersConfig()
