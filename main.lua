@@ -4,7 +4,7 @@ local BetterBags = LibStub('AceAddon-3.0'):GetAddon("BetterBags")
 assert(BetterBags, "BetterBags - Teleports requires BetterBags")
 
 ---@class Categories: AceModule
-local categories = BetterBags:GetModule('Categories')
+local Categories = BetterBags:GetModule('Categories')
 
 ---@class Localization: AceModule
 local L = BetterBags:GetModule('Localization')
@@ -17,6 +17,9 @@ local AceDB = LibStub("AceDB-3.0")
 
 ---@class Config: AceModule
 local Config = BetterBags:GetModule('Config')
+
+---@class Context: AceModule
+local Context = BetterBags:GetModule('Context')
 
 ---@class Events: AceModule
 local Events = BetterBags:GetModule('Events')
@@ -36,7 +39,7 @@ local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
 local isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 -- Kill the category from different plugin.
-categories:WipeCategory(TUTORIAL_TITLE31)
+Categories:WipeCategory(Context:New('BBTeleporters_DeleteCategory'),TUTORIAL_TITLE31)
 
 -- Make an empty table to store item data in...
 local teleporters = {}
@@ -62,10 +65,11 @@ if isClassic or isCata then
                     end,
                     set = function(info, value)
                         Teleporters.db.profile.enablePortalReagents = value
-                        clearTeleportCategory()
-                        addTeleportItemsToTable()
-                        addTeleportersToCategory()
-                        Events:SendMessage('bags/FullRefreshAll')
+                        Teleporters:clearTeleportCategory()
+                        Teleporters:addTeleportItemsToTable()
+                        Teleporters:addTeleportersToCategory()
+                        local ctx = Context:New('BBTeleporters_RefreshAll')
+                        Events:SendMessage(ctx, 'bags/FullRefreshAll')
                     end,
                 },
                 forceRefreshTeleports = {
@@ -73,10 +77,11 @@ if isClassic or isCata then
                     name = "Force Refresh",
                     desc = "This will forcibly refresh the Teleporters category.",
                     func = function()
-                        clearTeleportCategory()
-                        addTeleportItemsToTable()
-                        addTeleportersToCategory()
-                        Events:SendMessage('bags/FullRefreshAll')
+                        Teleporters:clearTeleportCategory()
+                        Teleporters:addTeleportItemsToTable()
+                        Teleporters:addTeleportersToCategory()
+                        local ctx = Context:New('BBTeleporters_RefreshAll')
+                        Events:SendMessage(ctx, 'bags/FullRefreshAll')
                     end,
                 },
             },
@@ -95,10 +100,11 @@ else
                     name = "Force Refresh",
                     desc = "This will forcibly refresh the Teleporters category.",
                     func = function()
-                        clearTeleportCategory()
-                        addTeleportItemsToTable()
-                        addTeleportersToCategory()
-                        Events:SendMessage('bags/FullRefreshAll')
+                        Teleporters:clearTeleportCategory()
+                        Teleporters:addTeleportItemsToTable()
+                        Teleporters:addTeleportersToCategory()
+                        local ctx = Context:New('BBTeleporters_RefreshAll')
+                        Events:SendMessage(ctx, 'bags/FullRefreshAll')
                     end,
                 },
             },
@@ -115,11 +121,11 @@ function Teleporters:addTeleportersConfig()
     Config:AddPluginConfig("Teleporters", configOptions)
 end
 
-function clearTeleportCategory()
-    categories:WipeCategory(L:G("Teleporters"))
+function Teleporters:clearTeleportCategory()
+    Categories:WipeCategory(Context:New('BBTeleporters_DeleteCategory'),L:G("Teleporters"))
 end
 
-function addTeleportItemsToTable()
+function Teleporters:addTeleportItemsToTable()
     -- Clear the table of items if needed.
     table.wipe(teleporters)
 
@@ -326,24 +332,25 @@ function addTeleportItemsToTable()
     end
 end
 
-function addTeleportersToCategory()
+function Teleporters:addTeleportersToCategory()
+    local ctx = Context:New('BBTeleporters_AddItemToCategory')
     -- Loop through list of teleporters and add to category.
     for _, item in ipairs(teleporters) do
-        categories:AddItemToCategory(item.itemID, L:G("Teleporters"))
+        Categories:AddItemToCategory(ctx, item.itemID, L:G("Teleporters"))
         --@debug@
         print("Added " .. item.itemName .. " to category " .. L:G("Teleporters"))
         --@end-debug@
     end
 end
 
--- On plugin load, wipe the categories we've added
+-- On plugin load, wipe the Categories we've added
 function Teleporters:OnInitialize()
     self.db = AceDB:New("BetterBags_TeleportersDB", defaults)
     self.db:SetProfile("global")
     db = self.db.profile
 
     self:addTeleportersConfig()
-    clearTeleportCategory()
-    addTeleportItemsToTable()
-    addTeleportersToCategory()
+    self:clearTeleportCategory()
+    self:addTeleportItemsToTable()
+    self:addTeleportersToCategory()
 end
