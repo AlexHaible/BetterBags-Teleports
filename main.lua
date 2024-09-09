@@ -330,6 +330,7 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 212337, itemName = "Stone of the Hearth" })
         table.insert(teleporters, { itemID = 219222, itemName = "Time-Lost Artifact (Remix)" })
         table.insert(teleporters, { itemID = 223988, itemName = "Dalaran Hearthstone (Quest Item)" })
+        table.insert(teleporters, { itemID = 228940, itemName = "Notorious Thread's Hearthstone" })
     end
 end
 
