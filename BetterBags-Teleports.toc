@@ -1,7 +1,7 @@
-## Interface: 100207, 110000, 110002, 40400, 11503
+## Interface: 100207, 110000, 110002, 110005, 40400, 11503
 
 ## Title: BetterBags - Teleports
-## Author: Sauravisus (Xerastrasza - Magtheridon EU, Horde)
+## Author: Sauravisus (Xirastrasza - Argent Dawn EU, Horde)
 ## Notes: Puts all your hearthstones, and teleport items in one category.
 ## Version: @project-version@
 ## X-Date: @project-date-iso@
