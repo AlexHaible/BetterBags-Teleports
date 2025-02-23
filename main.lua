@@ -27,6 +27,8 @@ local Events = BetterBags:GetModule('Events')
 ---@type string, AddonNS
 local _, addon = ...
 
+local _, _, _, interfaceVersion = GetBuildInfo()
+
 local db
 local defaults = {
     profile = {}
@@ -331,6 +333,18 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 219222, itemName = "Time-Lost Artifact (Remix)" })
         table.insert(teleporters, { itemID = 223988, itemName = "Dalaran Hearthstone (Quest Item)" })
         table.insert(teleporters, { itemID = 228940, itemName = "Notorious Thread's Hearthstone" })
+        table.insert(teleporters, { itemID = 228996, itemName = "Relic of Crystal Connections" })
+        table.insert(teleporters, { itemID = 235016, itemName = "Redeployment Module" })
+    end
+    if interfaceVersion >= 110100 then
+        table.insert(teleporters, { itemID = 230850, itemName = "Delve-O-Bot 7001" })
+        table.insert(teleporters, { itemID = 236687, itemName = "Explosive Hearthstone" })
+        table.insert(teleporters, { itemID = 234389, itemName = "Gallagio Loyalty Rewards Card: Silver" })
+        table.insert(teleporters, { itemID = 234390, itemName = "Gallagio Loyalty Rewards Card: Gold" })
+        table.insert(teleporters, { itemID = 234391, itemName = "Gallagio Loyalty Rewards Card: Platinum" })
+        table.insert(teleporters, { itemID = 234392, itemName = "Gallagio Loyalty Rewards Card: Black" })
+        table.insert(teleporters, { itemID = 234393, itemName = "Gallagio Loyalty Rewards Card: Diamond" })
+        table.insert(teleporters, { itemID = 234394, itemName = "Gallagio Loyalty Rewards Card: Legendary" })
     end
 end
 
