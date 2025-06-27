@@ -210,7 +210,7 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 54452, itemName = "Ethereal Portal" })
     end
     -- Section Cataclysm
-    if isCataOrAbove
+    if isCataOrAbove then
         table.insert(teleporters, { itemID = 58487, itemName = "Potion of Deepholm" })
         table.insert(teleporters, { itemID = 61379, itemName = "Gidwin's Hearthstone" })
         table.insert(teleporters, { itemID = 63206, itemName = "Wrap of Unity: Stormwind" })
