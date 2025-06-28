@@ -181,6 +181,9 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 35230, itemName = "Darnarian's Scroll of Teleportation" })
         table.insert(teleporters, { itemID = 37118, itemName = "Scroll of Recall" })
         table.insert(teleporters, { itemID = 37863, itemName = "Direbrew's Remote" })
+        if not isRetail then
+            table.insert(teleporters, { itemID = 184871, itemName = "Dark Portal (TBC)" })
+        end
     end
     -- Section WotLK
     if isWotLKOrAbove then
@@ -208,6 +211,13 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 51560, itemName = "Runed Band of the Kirin Tor" })
         table.insert(teleporters, { itemID = 52251, itemName = "Jaina's Locket" })
         table.insert(teleporters, { itemID = 54452, itemName = "Ethereal Portal" })
+        if not isRetail then
+            table.insert(teleporters, { itemID = 199335, itemName = "Teleport Scroll: Menethil Harbor" })
+            table.insert(teleporters, { itemID = 199336, itemName = "Teleport Scroll: Stormwind Harbor" })
+            table.insert(teleporters, { itemID = 199777, itemName = "Teleport Scroll: Orgrimmar Zepplin Tower" })
+            table.insert(teleporters, { itemID = 199778, itemName = "Teleport Scroll: Undercity Zepplin Tower" })
+            table.insert(teleporters, { itemID = 200068, itemName = "Teleport Scroll: Shattrath City" })
+        end
     end
     -- Section Cataclysm
     if isCataOrAbove then
@@ -225,12 +235,6 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 65360, itemName = "Cloak of Coordination: Stormwind" })
         table.insert(teleporters, { itemID = 68808, itemName = "Hero's Hearthstone" })
         table.insert(teleporters, { itemID = 68809, itemName = "Veteran's Hearthstone" })
-        table.insert(teleporters, { itemID = 184871, itemName = "Dark Portal (TBC)" })
-        table.insert(teleporters, { itemID = 199335, itemName = "Teleport Scroll: Menethil Harbor" })
-        table.insert(teleporters, { itemID = 199336, itemName = "Teleport Scroll: Stormwind Harbor" })
-        table.insert(teleporters, { itemID = 199777, itemName = "Teleport Scroll: Orgrimmar Zepplin Tower" })
-        table.insert(teleporters, { itemID = 199778, itemName = "Teleport Scroll: Undercity Zepplin Tower" })
-        table.insert(teleporters, { itemID = 200068, itemName = "Teleport Scroll: Shattrath City" })
     end
     -- Section Mists
     if isMistsOrAbove then
