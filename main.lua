@@ -378,11 +378,15 @@ function Teleporters:addTeleportItemsToTable()
         table.insert(teleporters, { itemID = 234392, itemName = "Gallagio Loyalty Rewards Card: Black" })
         table.insert(teleporters, { itemID = 234393, itemName = "Gallagio Loyalty Rewards Card: Diamond" })
         table.insert(teleporters, { itemID = 234394, itemName = "Gallagio Loyalty Rewards Card: Legendary" })
-    end
-    if interfaceVersion >= 110200 then
         table.insert(teleporters, { itemID = 243056, itemName = "Delver's Mana-Bound Ethergate" })
         table.insert(teleporters, { itemID = 245970, itemName = "P.O.S.T. Master's Express Hearthstone" })
         table.insert(teleporters, { itemID = 246565, itemName = "Cosmic Hearthstone" })
+        table.insert(teleporters, { itemID = 249699, itemName = "Shadowguard Translocator" })
+    end
+    if interfaceVersion >= 110205 then
+        table.insert(teleporters, { itemID = 247849, itemName = "Dalaran Hearthstone (Remix)" })
+        table.insert(teleporters, { itemID = 249229, itemName = "Black Temple Scroll (Remix)" })
+        table.insert(teleporters, { itemID = 249230, itemName = "Temple of Zin-Malor (Remix)" })
     end
 end
 
