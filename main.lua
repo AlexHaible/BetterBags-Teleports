@@ -36,19 +36,19 @@ local defaults = {
 local configOptions
 
 -- Get the game version
-local isRetail  = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
-local isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
-local isTBC     = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
-local isWotLK   = WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC
-local isCata    = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
-local isMists   = WOW_PROJECT_ID == WOW_PROJECT_MISTS_CLASSIC
+addon.data.isRetail  = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+addon.data.isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
+addon.data.isTBC     = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
+addon.data.isWotLK   = WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC
+addon.data.isCata    = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
+addon.data.isMists   = WOW_PROJECT_ID == WOW_PROJECT_MISTS_CLASSIC
 
 -- “Or above” helpers for gating
-local isMistsOrAbove   = isMists   or isRetail
-local isCataOrAbove    = isCata    or isMists or isRetail
-local isWotLKOrAbove   = isWotLK   or isCata  or isMists or isRetail
-local isTBCOrAbove     = isTBC     or isWotLK or isCata  or isMists or isRetail
-local isClassicOrAbove = isClassic or isTBC   or isWotLK or isCata  or isMists or isRetail
+local isMistsOrAbove   = addon.data.isMists   or addon.data.isRetail
+local isCataOrAbove    = addon.data.isCata    or addon.data.isMists or addon.data.isRetail
+local isWotLKOrAbove   = addon.data.isWotLK   or addon.data.isCata  or addon.data.isMists or addon.data.isRetail
+local isTBCOrAbove     = addon.data.isTBC     or addon.data.isWotLK or addon.data.isCata  or addon.data.isMists or addon.data.isRetail
+local isClassicOrAbove = addon.data.isClassic or addon.data.isTBC   or addon.data.isWotLK or addon.data.isCata  or addon.data.isMists or addon.data.isRetail
 
 -- Kill the category from different plugin.
 Categories:WipeCategory(Context:New('BBTeleporters_DeleteCategory'),TUTORIAL_TITLE31)
@@ -64,7 +64,7 @@ local function refreshTeleports()
     Events:SendMessage(ctx, 'bags/FullRefreshAll')
 end
 
-local isClassicEra = isClassic or isTBC or isWotLK or isCata
+local isClassicEra = addon.data.isClassic or addon.data.isTBC or addon.data.isWotLK or addon.data.isCata
 
 if isClassicEra then
     defaults.profile = {
@@ -130,16 +130,6 @@ function Teleporters:clearTeleportCategory()
 end
 
 function Teleporters:hydrateTeleportersTable()
-    table.wipe(teleporters)
-
-    if isTBCOrAbove then loadSet(self.data.tbc) end
-    if isWotLKOrAbove then loadSet(self.data.wotlk) end
-    if isCataOrAbove then loadSet(self.data.cata) end
-    if isMistsOrAbove then loadSet(self.data.mists) end
-    if isRetail then loadSet(self.data.retail) end
-end
-
-function Teleporters:hydrateTeleportersTable()
     -- Clear the table of items if needed.
     table.wipe(teleporters)
 
@@ -152,57 +142,57 @@ function Teleporters:hydrateTeleportersTable()
         end
     end
 
-    if (isClassic or isTBC or isWotLK or isCata) and db.enablePortalReagents then
+    if (isClassicEra) and db.enablePortalReagents then
         -- Add the reagents for mage portals to the teleporters category.
-        loadSet(self.data.enablePortalReagents)
+        loadSet(addon.data.enablePortalReagents)
     end
 
     -- Section Vanilla
     if isClassicOrAbove then
-        loadSet(self.data.classic)
+        loadSet(addon.data.classic)
     end
     -- Section TBC
     if isTBCOrAbove then
-        loadSet(self.data.tbc)
+        loadSet(addon.data.tbc)
     end
     -- Section WotLK
     if isWotLKOrAbove then
-        loadSet(self.data.wotlk)
+        loadSet(addon.data.wotlk)
     end
     -- Section Cataclysm
     if isCataOrAbove then
-        loadSet(self.data.cata)
+        loadSet(addon.data.cata)
     end
     -- Section Mists
     if isMistsOrAbove then
-        loadSet(self.data.mists)
+        loadSet(addon.data.mists)
     end
     -- Section WoD
-    if isRetail then
-        loadSet(self.data.wod)
+    if addon.data.isRetail then
+        loadSet(addon.data.wod)
     end
     -- Section Legion
-    if isRetail then
-        loadSet(self.data.legion)
+    if addon.data.isRetail then
+        loadSet(addon.data.legion)
     end
     -- Section BFA
-    if isRetail then
-        loadSet(self.data.bfa)
+    if addon.data.isRetail then
+        loadSet(addon.data.bfa)
     end
     -- Section Shadowlands
-    if isRetail then
-        loadSet(self.data.sl)
+    if addon.data.isRetail then
+        loadSet(addon.data.sl)
     end
     -- Section Dragonflight
-    if isRetail then
-        loadSet(self.data.df)
+    if addon.data.isRetail then
+        loadSet(addon.data.df)
     end
     -- Section The War Within
-    if isRetail then
-        loadSet(self.data.tww)
+    if addon.data.isRetail then
+        loadSet(addon.data.tww)
     end
     if interfaceVersion >= 110207 then
-        loadSet(self.data.patchContent)
+        loadSet(addon.data.patchContent)
     end
 end
 

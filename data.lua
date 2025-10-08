@@ -41,7 +41,7 @@ addon.data.tbc = {
     {35230, "Darnarian's Scroll of Teleportation"},
     {37118, "Scroll of Recall"},
     {37863, "Direbrew's Remote"},
-    {184871, "Dark Portal (TBC)", condition = function() return not isRetail end},
+    {184871, "Dark Portal (TBC)", condition = function() return not addon.data.isRetail end},
 }
 
 addon.data.wotlk = {
@@ -69,11 +69,11 @@ addon.data.wotlk = {
     {51560, "Runed Band of the Kirin Tor"},
     {52251, "Jaina's Locket"},
     {54452, "Ethereal Portal"},
-    {199335, "Teleport Scroll: Menethil Harbor", condition = function() return not isRetail end},
-    {199336, "Teleport Scroll: Stormwind Harbor", condition = function() return not isRetail end},
-    {199777, "Teleport Scroll: Orgrimmar Zepplin Tower", condition = function() return not isRetail end},
-    {199778, "Teleport Scroll: Undercity Zepplin Tower", condition = function() return not isRetail end},
-    {200068, "Teleport Scroll: Shattrath City", condition = function() return not isRetail end},
+    {199335, "Teleport Scroll: Menethil Harbor", condition = function() return not addon.data.isRetail end},
+    {199336, "Teleport Scroll: Stormwind Harbor", condition = function() return not addon.data.isRetail end},
+    {199777, "Teleport Scroll: Orgrimmar Zepplin Tower", condition = function() return not addon.data.isRetail end},
+    {199778, "Teleport Scroll: Undercity Zepplin Tower", condition = function() return not addon.data.isRetail end},
+    {200068, "Teleport Scroll: Shattrath City", condition = function() return not addon.data.isRetail end},
 }
 
 addon.data.cata = {
