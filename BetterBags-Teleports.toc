@@ -1,4 +1,4 @@
-## Interface: 110205, 110207, 50500, 40402, 11507
+## Interface: 120000, 50500, 40402, 11507
 
 ## Title: BetterBags - Teleports
 ## Author: Sauravisus (Xirastrasza - Argent Dawn EU, Horde)
