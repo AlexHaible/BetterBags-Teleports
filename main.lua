@@ -137,7 +137,7 @@ function Teleporters:hydrateTeleportersTable()
     local function loadSet(data)
         for _, v in ipairs(data) do
             if not v.condition or v.condition() then
-                table.insert(teleporters, { itemID = v[1], itemName = v[2] })
+                table.insert(teleporters, v[1])
             end
         end
     end
@@ -198,12 +198,10 @@ end
 
 function Teleporters:addTeleportersToCategory()
     local ctx = Context:New('BBTeleporters_AddItemToCategory')
+    local categoryName = L:G("Teleporters")
     -- Loop through list of teleporters and add to category.
-    for _, item in ipairs(teleporters) do
-        Categories:AddItemToCategory(ctx, item.itemID, L:G("Teleporters"))
-        --@debug@
-        print("Added " .. item.itemName .. " to category " .. L:G("Teleporters"))
-        --@end-debug@
+    for _, itemID in ipairs(teleporters) do
+        Categories:AddItemToCategory(ctx, itemID, categoryName)
     end
 end
 
