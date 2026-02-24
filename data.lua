@@ -129,6 +129,7 @@ addon.data.legion = {
     {132120}, -- Stormwind Portal Stone
     {132517}, -- Intra-Dalaran Wormhole Generator
     {132523}, -- Reaves Battery
+    {132524}, -- Reaves Module: Wormhole Generator Mode
     {138448}, -- Emblem of Margoss
     {139590}, -- Scroll of Teleport: Ravenholdt
     {139599}, -- Empowered Ring of the Kirin Tor
@@ -204,6 +205,7 @@ addon.data.sl = {
     {188952}, -- Dominated Hearthstone
     {189827}, -- Cartel Xy's Proof of Initiation
     {190196}, -- Enlightened Hearthstone
+    {190234}, -- Enlightened Portal Research
     {190237}, -- Broker Translocation Matrix
     {191029}, -- Lilian's Hearthstone
 }
@@ -232,11 +234,14 @@ addon.data.df = {
 
 addon.data.tww = {
     {208704}, -- Deepdweller's Earthen Hearthstone
+    {221965}, -- Prototype: Wormhole Generator: Khaz Algar
+    {221966}, -- Wormhole Generator: Khaz Algar
     {223988}, -- Dalaran Hearthstone (Quest Item)
     {228940}, -- Notorious Thread's Hearthstone
     {228996}, -- Relic of Crystal Connections
     {235016}, -- Redeployment Module
     {230850}, -- Delve-O-Bot 7001
+    {235037}, -- Crumpled Schematic: Wormhole Generator: Undermine
     {236687}, -- Explosive Hearthstone
     {234389}, -- Gallagio Loyalty Rewards Card: Silver
     {234390}, -- Gallagio Loyalty Rewards Card: Gold
@@ -252,6 +257,19 @@ addon.data.tww = {
     {249229}, -- Black Temple Scroll (Lemix)
     {249230}, -- Temple of Zin-Malor (Lemix)
     {250411}, -- Timerunner's Hearthstone (Lemix)
+}
+
+addon.data.midnight = {
+    {238379}, -- Warping Wise
+    {239151}, -- Light's Summon
+    {248131}, -- Key to the Arcantina
+    {248485}, -- Wormhole Generator: Quel'thalas
+    {252607}, -- Abundant Beacon
+    {253629}, -- Personal Key to the Arcantina
+    {257736}, -- Lightcalled Hearthstone
+    {258736}, -- Scroll of Town Portal
+    {263933}, -- Preyseeker's Hearthstone
+    {265100}, -- Corewarden's Hearthstone
 }
 
 addon.data.patchContent = {}

@@ -191,7 +191,11 @@ function Teleporters:hydrateTeleportersTable()
     if addon.data.isRetail then
         loadSet(addon.data.tww)
     end
-    if interfaceVersion >= 110207 then
+    -- Section Midnight
+    if addon.data.isRetail then
+        loadSet(addon.data.midnight)
+    end
+    if interfaceVersion >= 120002 then
         loadSet(addon.data.patchContent)
     end
 end
