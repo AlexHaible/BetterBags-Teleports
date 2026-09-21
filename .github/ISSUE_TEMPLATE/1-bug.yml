@@ -36,8 +36,11 @@ body:
         - Retail PTR
         - Classic Era
         - Classic Era PTR
+        - Mists of Pandaria Classic
+        - Mists of Pandaria Classic PTR
         - Cataclysm Classic
-        - Cataclysm Classic PTR
+        - WoW Forever
+        - WoW Forever Beta
   - type: textarea
     id: logs
     attributes:

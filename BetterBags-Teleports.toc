@@ -1,4 +1,4 @@
-## Interface: 120100, 120105, 50500, 40402, 11507
+## Interface: 120100, 120105
 
 ## Title: BetterBags - Teleports
 ## Author: Sauravisus (Xirastrasza - Argent Dawn EU, Horde)
@@ -29,7 +29,19 @@
 ## OptionalDeps: BugSack, BugGrabber
 #@end-alpha@
 
-data.lua
+data\init.lua
+data\classic.lua
+data\tbc.lua
+data\wotlk.lua
+data\cata.lua
+data\mists.lua
+data\wod.lua
+data\legion.lua
+data\bfa.lua
+data\sl.lua
+data\df.lua
+data\tww.lua
+data\midnight.lua
 main.lua
 
 #@debug@
