@@ -3,9 +3,9 @@ local _, addon = ...
 
 addon.data.classic = {
     {6948}, -- Hearthstone
-    {9173}, -- Goblin Transponder (Unlocks a teleport from Booty Bay to Gnomeregan)
+    {9173, condition = addon.isNotRetail}, -- Goblin Transponder (Unlocks a teleport from Booty Bay to Gnomeregan)
     {12585, condition = addon.isNotRetail}, -- Stormwind Medallion (Creates a group portal to Stormwind)
-    {17191}, -- Scepter of Celebras (Creates a group portal to Earth Song Falls in inner Maraudon)
+    {17191, condition = addon.isNotRetail}, -- Scepter of Celebras (Creates a group portal to Earth Song Falls in inner Maraudon)
     {17690}, -- Frostwolf Insignia Rank 1
     {17691}, -- Stormpike Insignia Rank 1
     {17900}, -- Stormpike Insignia Rank 2
