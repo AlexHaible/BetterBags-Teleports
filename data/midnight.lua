@@ -12,4 +12,8 @@ addon.data.midnight = {
     {258736}, -- Scroll of Town Portal
     {263933}, -- Preyseeker's Hearthstone
     {265100}, -- Corewarden's Hearthstone
+    {279550}, -- Potion of Venomous Return
+    {281136}, -- Hiveborne Hearthstone
+    {281615}, -- Shadeweaver's Hearthstone
+    {286643}, -- Kinduru's Spiriting Quill
 }
