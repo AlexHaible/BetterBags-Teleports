@@ -1,7 +1,7 @@
 ## Interface: 16001
 
 ## Title: BetterBags - Teleports
-## Author: Sauravisus (Xirastrasza - Argent Dawn EU, Horde)
+## Author: Sauravisus (John Thorium - PvE - Alliance)
 ## Notes: Puts all your hearthstones, and teleport items in one category.
 ## Version: @project-version@
 ## X-Date: @project-date-iso@
